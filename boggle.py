@@ -56,13 +56,22 @@ def get_dictionary(dictionary_file):
         return [w.strip().upper() for w in f]
 
 
-def main():
-    grid = make_grid(3, 3)
-    dictionary = get_dictionary('C:\\Users\\liam_\\PycharmProjects\\boggle_solver\\words.txt')
-    words = search(grid, dictionary)
+# put display words in own method
+def display_words(words):
     for word in words:
         print word
     print " Found {0} words".format(len(words))
+
+
+def main():
+    # 2, 2 grid takes approx 3 seconds to run
+    # 3, 3 grid takes 6 approx seconds
+    # a 4,4 grid, my guess would be approx 9 seconds
+    grid = make_grid(3, 3)
+    dictionary = get_dictionary('C:\\Users\\liam_\\PycharmProjects\\boggle_solver\\words.txt')
+    words = search(grid, dictionary)
+    # call the display_words method as you have now moved it.
+    display_words(words)
 
 
 main()
