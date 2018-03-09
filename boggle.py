@@ -57,7 +57,7 @@ def search(grid, dictionary):
 
 def get_dictionary(dictionary_file):
     with open(dictionary_file) as f:
-        return [w.strip().upper() for w in f]
+        return {w.strip().upper() for w in f}
 
 
 # put display words in own method
